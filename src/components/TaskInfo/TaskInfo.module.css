@@ -1,0 +1,33 @@
+.TaskList{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    margin-top: 4rem;
+}
+
+.CountTasks{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 45rem;
+}
+
+.paragraphCreated > span,
+.paragraphConcluded > span {
+    border-radius: 50%;
+    padding: 2px 8px;
+    width: 3rem;
+    background: var(--gray-dark);
+    color: var(--white);
+}
+
+.paragraphCreated {
+    color: var(--purple-blue);
+    font-weight: bold;
+}
+
+.paragraphConcluded {
+    color: var(--red-dark);
+    font-weight: bold;
+}

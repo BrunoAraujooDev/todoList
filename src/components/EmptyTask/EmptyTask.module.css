@@ -1,0 +1,23 @@
+.containerEmptyTask {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--black);
+    margin-top: 2.68rem;
+    border-top: 1px solid var(--gray-dark);
+    width: 100%;
+}
+
+.containerEmptyTask > svg {
+    margin: 4rem 0 1rem 0 ;
+}
+
+.paragraph1{
+    color: var(--dark);
+}
+
+.paragraph2{
+    color: var(--light-black);
+    font-size: 0.875rem;
+}

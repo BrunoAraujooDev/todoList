@@ -1,0 +1,21 @@
+.header{
+    display: flex;
+    justify-content: center;
+    padding: 4rem;
+    width: 100%;
+    background-color: var(--purple-blue);
+    color: var(--white);
+    font-size: 16px;
+}
+
+.title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 12rem;
+}
+
+.title > h1 {
+    font-size: 2rem;
+    line-height: 1.6;
+}

@@ -1,0 +1,21 @@
+.principal {
+  height: 100vh;
+  width: 100vw;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-top: 2rem;
+  width: 46rem;
+  margin: auto;
+}
+
+.list {
+  max-width: 46rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

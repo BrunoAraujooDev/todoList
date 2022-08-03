@@ -1,0 +1,31 @@
+:root{
+
+    --white: #fff;
+    --black: #0b090a;
+    --dark-black: #0b090a;
+    --light-black: #111011;
+    --gray-body: #eee;
+    --gray-dark: rgb(216, 214, 214);
+    --purple-blue: #3d5a80;
+    --red-light: #c9184a;
+    --red-dark: #a4133c;
+  
+  }
+  
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background: var(--gray-body);
+    -webkit-font-smoothing: antialiased;
+    color: var(--black);
+  }
+  
+  body, input, textarea, button {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+  }
