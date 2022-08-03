@@ -5,8 +5,10 @@
     --dark-black: #0b090a;
     --light-black: #111011;
     --gray-body: #eee;
-    --gray-dark: rgb(216, 214, 214);
+    --gray-dark: rgb(185, 184, 184);
     --purple-blue: #3d5a80;
+    --purple-light: #4a76b1;
+    --purple-body: #bfcddf;
     --red-light: #c9184a;
     --red-dark: #a4133c;
   
@@ -19,7 +21,7 @@
   }
   
   body {
-    background: var(--gray-body);
+    background: var(--purple-body);
     -webkit-font-smoothing: antialiased;
     color: var(--black);
   }

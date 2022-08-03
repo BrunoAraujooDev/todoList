@@ -1,0 +1,61 @@
+.containerTask {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--black);
+    margin-top: 2.68rem;
+    width: 100%;
+    background: var(--gray-body);
+    border: 1px solid var(--purple-blue);
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0px 2px 8px rgba(26, 25, 25, 0.06);
+}
+
+.label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.inputCheckbox{
+    opacity: 0;
+}
+
+.checkmark {
+    width: 24px;
+    height: 24px;
+    background-color: var(--gray-body);
+    border: 1px solid var(--purple-blue);
+    border-radius: 50%;
+    display: flex;
+    margin-right: 0.8rem;
+}
+
+.inputCheckbox:checked ~ .checkmark {
+    background-color: var(--purple-blue);
+    border: 1px solid var(--purple-light);
+}
+
+.checkmark:after {
+    content: "\2713";
+    position: relative;
+    display: none;
+    left: 5px;
+    top: -1px;
+    width: 5px;
+    height: 10px;
+    color: var(--white);
+}
+
+.inputCheckbox:checked ~ .checkmark:after{
+    display: block;
+}
+
+.containerTask > svg:hover {
+    color: var(--red-light);
+}
+
+.containerTask ~ .containerTask {
+    margin-top: 0.75rem;
+}
