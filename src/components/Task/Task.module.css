@@ -18,6 +18,11 @@
     justify-content: center;
 }
 
+.labelChecked{
+    text-decoration: line-through; 
+    display: inline;
+}
+
 .inputCheckbox{
     opacity: 0;
 }
