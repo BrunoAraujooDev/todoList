@@ -14,7 +14,6 @@ function TaskList() {
 
     const [task, setTask] = useState('');
     const [list, setList] = useState<string[]>([]);
-    const [checkedList, setCheckedList] = useState<boolean[]>([]);
     const [doneTask, setDoneTask] = useState<number>(0);
 
     const getTask = (event: React.MouseEvent<HTMLButtonElement>, task: String): void => {
@@ -43,38 +42,11 @@ function TaskList() {
         setDoneTask(count)
     }
 
-    const handleCheckedTask = (taskChecked: objChecked) => {
-        console.log('taskChecked', taskChecked)
-        const index = list.indexOf(taskChecked.task)
-        checkedList[index] = taskChecked.isChecked
-        let count = 0
+    const handleCheckedTask = (taskChecked: number) => {
+        let auxDoneTask = doneTask
+        const count = auxDoneTask + taskChecked
 
-        if(taskChecked.isChecked === true) {
-            setCheckedList([...checkedList, taskChecked.isChecked])
-            count = doneTask + 1
-            setDoneTask(count)
-        } else {
-            checkedList.splice(index,1)
-            count = doneTask - 1
-            setDoneTask(count)
-        }
-
-
-        // setCheckedList([...checkedList])
-
-        // checkedList.map(item => {
-
-        //     if(item === true) {
-        //         count = count +1
-        //     }
-        // })
-
-        console.log(count)
-        // setDoneTask(checkedList.length)
-        console.log(doneTask);
-        
-
-
+        setDoneTask(count)
     }
 
     return (

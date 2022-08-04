@@ -7,17 +7,20 @@ interface TaskProps {
     task: string;
     index: number;
     onDeleteTask: (task: string) => void;
-    onCheckTask: (task: objChecked) => void;
+    onCheckTask: (task: number) => void;
 }
 
 interface objChecked {
     task: string;
     isChecked: boolean;
 }
+let isChecked = false;
 
 function Task({task, index, onDeleteTask, onCheckTask}: TaskProps) {
 
-    const [isChecked, setIsChecked] = useState<boolean>(false);
+    // const [isChecked, setIsChecked] = useState<boolean>(false);
+
+
 
 
     const deleteTask = (): void => {
@@ -26,21 +29,23 @@ function Task({task, index, onDeleteTask, onCheckTask}: TaskProps) {
 
     const checkedTask = (): void => {
 
-        console.log('oi')
-
-        setIsChecked(!isChecked)
-        console.log('isChecked', isChecked)
-        onCheckTask({task, isChecked})
+        isChecked = !isChecked
+        
+        const validCheck = isChecked ? 1 : -1
+        
+        
+        onCheckTask(validCheck)
+        
     }
 
     return (
         <>
-        <div className={style.containerTask}>
-            <div onClick={checkedTask}>
-                <label htmlFor={task + index} className={ style.label}> 
+        <div className={style.containerTask}  >
+            <div >
+                <label htmlFor={task + index} className={ style.label} > 
                     <input type="checkbox" className={style.inputCheckbox} name='input' id={task + index} />
-                    <span className={style.checkmark}></span>
-                    <p className={isChecked ?  style.labelChecked : ''}>{task}</p>
+                    <span className={style.checkmark} onClick={checkedTask}></span>
+                    <p className={isChecked ?  style.labelChecked : ''} onClick={checkedTask}>{task}</p>
                 </label>
             </div>
             <Trash size={24} onClick={deleteTask}/>
