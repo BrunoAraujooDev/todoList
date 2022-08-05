@@ -42,9 +42,9 @@ function TaskList() {
         setDoneTask(count)
     }
 
-    const handleCheckedTask = (taskChecked: number) => {
+    const handleCheckedTask = (taskChecked: boolean) => {
         let auxDoneTask = doneTask
-        const count = auxDoneTask + taskChecked
+        const count = taskChecked ? auxDoneTask -1 : auxDoneTask + 1
 
         setDoneTask(count)
     }

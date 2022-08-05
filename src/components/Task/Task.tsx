@@ -7,21 +7,12 @@ interface TaskProps {
     task: string;
     index: number;
     onDeleteTask: (task: string) => void;
-    onCheckTask: (task: number) => void;
+    onCheckTask: (task: boolean) => void;
 }
-
-interface objChecked {
-    task: string;
-    isChecked: boolean;
-}
-let isChecked = false;
 
 function Task({task, index, onDeleteTask, onCheckTask}: TaskProps) {
 
-    // const [isChecked, setIsChecked] = useState<boolean>(false);
-
-
-
+    const [isChecked, setIsChecked] = useState<boolean>(false);
 
     const deleteTask = (): void => {
         onDeleteTask(task)
@@ -29,12 +20,8 @@ function Task({task, index, onDeleteTask, onCheckTask}: TaskProps) {
 
     const checkedTask = (): void => {
 
-        isChecked = !isChecked
-        
-        const validCheck = isChecked ? 1 : -1
-        
-        
-        onCheckTask(validCheck)
+        setIsChecked(!isChecked)  
+        onCheckTask(isChecked)
         
     }
 
