@@ -1,4 +1,4 @@
-import { Trash } from 'phosphor-react';
+import { Pencil, Trash } from 'phosphor-react';
 import React, { useState } from 'react';
 import style from './Task.module.css';
 

@@ -41,6 +41,13 @@
     background: var(--red-dark);
 }
 
+.validateTask{
+    margin-top: 0.75rem;
+    color: var(--red-dark);
+    font-size: 0.9rem;
+}
+
 .tasks {
     width: 100%;
 }
+

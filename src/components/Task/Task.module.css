@@ -3,12 +3,12 @@
     justify-content: space-between;
     align-items: center;
     color: var(--black);
-    margin-top: 2.68rem;
     width: 100%;
     background: var(--gray-body);
     border: 1px solid var(--purple-blue);
     border-radius: 8px;
     padding: 1rem;
+    margin-top: 0.75rem;
     box-shadow: 0px 2px 8px rgba(26, 25, 25, 0.06);
 }
 
@@ -61,6 +61,4 @@
     color: var(--red-light);
 }
 
-.containerTask ~ .containerTask {
-    margin-top: 0.75rem;
-}
+

@@ -15,18 +15,20 @@ function TaskList() {
     const [task, setTask] = useState('');
     const [list, setList] = useState<string[]>([]);
     const [doneTask, setDoneTask] = useState<number>(0);
+    const [hasTask, setHaskTask] = useState<boolean>(true);
 
     const getTask = (event: React.MouseEvent<HTMLButtonElement>, task: String): void => {
 
         event.preventDefault()
-
-
         let taskWithoutBlankSpace = task.trim()
 
         if(taskWithoutBlankSpace !== ''){
             setList((state: string[]) => [...state, taskWithoutBlankSpace ] )
             setTask('')
-        } 
+            setHaskTask(true)
+        } else {
+            setHaskTask(false)
+        }
     }
 
     const handleInvalidTask = (event: InvalidEvent<HTMLInputElement>) => {
@@ -38,7 +40,7 @@ function TaskList() {
         const cleanedTasks = list.filter( item => item !== task);
 
         setList(cleanedTasks);
-        const count = doneTask - 1
+        const count = doneTask > 0 ? doneTask - 1 : 0
         setDoneTask(count)
     }
 
@@ -64,6 +66,7 @@ function TaskList() {
                     <PlusCircle size={20} />
                 </button>
             </form>
+            {!hasTask &&  <p className={style.validateTask}>Insira uma tarefa válida!</p>}
             <TaskInfo created={list.length} done={doneTask}/>
             {list.length  ? 
                 list.map((item, index) => {
